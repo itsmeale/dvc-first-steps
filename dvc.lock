@@ -26,4 +26,4 @@ train:
       n_estimators: 10
   outs:
   - path: models/tree.joblib
-    md5: 17e50a01afcfb2340f6970c1692fbee3
+    md5: cfb5a74d9a7f2bb4f5f76af16ba62090
