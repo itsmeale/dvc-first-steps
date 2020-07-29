@@ -4,7 +4,7 @@ from pathlib import Path
 import pandas as pd
 import pickle
 
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 
@@ -23,7 +23,7 @@ y = train_df["Survived"].values
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.3, random_state=42)
 
-classifier = DecisionTreeClassifier()
+classifier = RandomForestClassifier(n_estimators=110)
 classifier.fit(X_train, y_train)
 y_pred = classifier.predict(X_test)
 

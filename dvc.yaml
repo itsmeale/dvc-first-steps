@@ -1,0 +1,18 @@
+stages:
+  prepare:
+    cmd: python src/prepare.py
+    deps:
+    - data/raw/test.csv
+    - data/raw/train.csv
+    - src/prepare.py
+    outs:
+    - data/iterim/test.csv
+    - data/iterim/train.csv
+  train:
+    cmd: python src/train.py
+    deps:
+    - data/iterim/test.csv
+    - data/iterim/train.csv
+    - src/train.py
+    outs:
+    - models/tree.joblib

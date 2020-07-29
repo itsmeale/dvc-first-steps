@@ -1,0 +1,26 @@
+prepare:
+  cmd: python src/prepare.py
+  deps:
+  - path: data/raw/test.csv
+    md5: 029c9cd22461f6dbe8d9ab01def965c6
+  - path: data/raw/train.csv
+    md5: 61fdd54abdbf6a85b778e937122e1194
+  - path: src/prepare.py
+    md5: fa1d7e3355c99cfe45e63fa3cb4ad60b
+  outs:
+  - path: data/iterim/test.csv
+    md5: 03a50ef56b97b1a290169caaa3d28a29
+  - path: data/iterim/train.csv
+    md5: 79d1f4a5ff5e70015588e0571e022dc5
+train:
+  cmd: python src/train.py
+  deps:
+  - path: data/iterim/test.csv
+    md5: 03a50ef56b97b1a290169caaa3d28a29
+  - path: data/iterim/train.csv
+    md5: 79d1f4a5ff5e70015588e0571e022dc5
+  - path: src/train.py
+    md5: c311c2b78855695ad2b2e298d1f2917c
+  outs:
+  - path: models/tree.joblib
+    md5: 59143c4280c3fabc7d0cadb4c18d518d
