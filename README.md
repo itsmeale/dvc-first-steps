@@ -22,4 +22,4 @@ dvc repro
 ```
 
 # Next steps
-[ ] Add metrics visualization whenfinishes the train process
+- [ ] Add metrics visualization when finishes the train process
