@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import yaml
 from pathlib import Path
 
 import pandas as pd
@@ -14,6 +15,10 @@ MODEL_FOLDER = Path("models")
 MODEL_NAME = "tree.joblib"
 
 
+with open("params.yaml", "r") as param_file:
+    params = yaml.safe_load(param_file)
+
+
 train_df = pd.read_csv(TRAIN_FILE)
 test_df = pd.read_csv(TEST_FILE)
 
@@ -22,7 +27,7 @@ y = train_df["Survived"].values
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.3, random_state=42)
 
-classifier = RandomForestClassifier(n_estimators=110)
+classifier = RandomForestClassifier(n_estimators=params["n_estimators"])
 classifier.fit(X_train, y_train)
 y_pred = classifier.predict(X_test)
 

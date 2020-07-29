@@ -20,7 +20,10 @@ train:
   - path: data/iterim/train.csv
     md5: 79d1f4a5ff5e70015588e0571e022dc5
   - path: src/train.py
-    md5: af78313e3212af7120f08ee4825d05f2
+    md5: c3a7918f2e789118bbd182f3f9663615
+  params:
+    params.yaml:
+      n_estimators: 10
   outs:
   - path: models/tree.joblib
-    md5: fe7fa8c782f0e2601d94cb3dd9e50ddb
+    md5: 17e50a01afcfb2340f6970c1692fbee3
