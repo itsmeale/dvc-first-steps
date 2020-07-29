@@ -8,7 +8,6 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 
-
 TRAIN_FILE = Path("data", "iterim", "train.csv")
 TEST_FILE = Path("data", "iterim", "test.csv")
 MODEL_FOLDER = Path("models")

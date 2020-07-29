@@ -2,10 +2,8 @@
 import pandas as pd
 from pathlib import Path
 
-
 RAW_DATA_FOLDER = Path("data", "raw")
 ITERIM_DATA_FOLDER = Path("data", "iterim")
-
 
 
 def preprocesing(df: pd.DataFrame):
